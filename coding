@@ -1,0 +1,48 @@
+>>> Clock.bpm = 100
+>>> ch = var ([0,1,5,3],[4])
+
+
+
+ch = var([5,4,0,3],[8,4,2,2])
+
+b >> bass(ch, dur=pam(3,2)), oct=(4,5))
+
+b.stop()
+
+b.amp=v.amp=0.8
+
+v >> viola(ch + [[2,0,0],0,[0,2,2],[0,0,2]],
+           dur=1, oct=(4,5)). offbeat() + var([(0,2),(2,4),(28,4)])
+v. amp=var([0.7,0],[48,16])
+
+z >> zap ([3,2,0], dur=1/3, sus=1/2, amp=A, pan=1) + [0[0,(0,2),0],0]
+p >> pluck ([0,2], dur=1/4, sus=1/2, amp=A, pan=-1) + [0,0,[0,0,1]]
+
+be >> bell([2,1,0,,2,3], dur=Psum(5,4), oct=(5,6)) + var([0,2],[12,4.5,11.5,4])
+            oct=(5,6)) + var([0,2,0,2], [12,4.5,11.5,4])
+
+be.stop()
+            
+A = var([1,0],[16.5,15.5])
+
+bd $ "(x)(-[-x]-)"
+cp $ "  H "
+sh $ "s s( s)"
+sh.rate=2
+sn $ " (   I )I(   [II])"
+tm $ "m m m([ m]) "
+tm.rate=(.8.1)
+tm.pan=(-.5,.5)
+
+group(bd,cp,sh,sn,tm).stop()
+
+fill $ "p[pppppp]"
+fill.rate=Prange(2,10)
+fill.pan=(-1,1)
+fill.rate=(.9,1)
+fill.amp=0
+
+del fill
+
+c >> crunch(dur=1/4)
+c.stop()
